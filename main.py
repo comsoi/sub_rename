@@ -14,13 +14,13 @@ def get_file_name(path):
             filenameList.append(filename)  # 返回mkv mp4文件名（不包含扩展名）
         elif filetype in subtypeList:
             subtitleList.append(filename)  # 返回字幕文件名（包含扩展名）
-    return filenameList, subtitleList
+    return filenameList, subtitleList，filetype
 
 
-def rename(filenameList, subtitleList):
+def rename(filenameList, subtitleList，filetype):
     for i, filename in enumerate(subtitleList):  # 遍历所有字幕文件
-        newName = os.path.join(filenameList[i]+".ass") 
-        oldName = os.path.join(filename+".ass") 
+        newName = os.path.join(filenameList[i]+filetype) 
+        oldName = os.path.join(filename+filetype) 
         os.rename(oldName, newName)
 
 
