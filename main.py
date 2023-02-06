@@ -17,7 +17,7 @@ def get_file_name(path):
     return filenameList, subtitleList，filetype
 
 
-def rename(filenameList, subtitleList，filetype):
+def rename(filenameList, subtitleList, filetype):
     for i, filename in enumerate(subtitleList):  # 遍历所有字幕文件
         newName = os.path.join(filenameList[i]+filetype) 
         oldName = os.path.join(filename+filetype) 
